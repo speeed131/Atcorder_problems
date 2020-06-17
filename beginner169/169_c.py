@@ -13,6 +13,7 @@
 # print(b)
 
 from math import floor
+# decimalモジュールからDecimal関数を読み込む
 from decimal import Decimal
 a, b = input().split()
 a = int(a)

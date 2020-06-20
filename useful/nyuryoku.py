@@ -44,3 +44,9 @@ print(type(A), A)
 # <class 'list'> [12, 34]
 print(type(A[0]), A[0])
 # <class 'int'> 12
+
+# 複数行複合
+list = []
+for i in range(N):
+    a,b=input().split()
+    list.append((int(a), b))

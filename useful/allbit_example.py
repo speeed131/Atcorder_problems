@@ -3,7 +3,7 @@
 i = 5
 bin(i) # 0b101
 bin(i >> 2) # 0b1
-print((i >> 2)& i) # 5 を 2 回右にシフトしたものと 1 の論理積は 1 (=True)
+# print((i >> 2)& i) # 5 を 2 回右にシフトしたものと 1 の論理積は 1 (=True)
 
 
 
@@ -14,3 +14,15 @@ item = (("みかん", 100), ("りんご", 200), ("ぶどう", 300))
 n = len(item)
 for i in range(2 ** n):
     # ここで必要なチェックを行う
+    # print(bin(i))
+    # で２進数も見てみると良い
+    total = 0
+    bag = []
+    # print("pattern {}:".format(i), end="")
+    for j in range(n): # ｊは0,1,2の繰り返し
+        if((i >> j) & 1): #iを２進数表記したものを順に右にシフトさせ最下位bitのチェックを行う
+            bag.append(item[j][0]) # フラグが立っていたら bagに果物を詰める
+            total += item[j][1]
+    if(total <= money):
+        print(total, bag)
+

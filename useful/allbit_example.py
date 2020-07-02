@@ -26,3 +26,5 @@ for i in range(2 ** n):
     if(total <= money):
         print(total, bag)
 
+        
+

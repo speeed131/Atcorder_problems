@@ -55,7 +55,7 @@ for i in range(N+1):
     while b[j] > K -a[i]:
         #降順なので−１している
         j -= 1
-        print(b[j])
+        # print(b[j])
     #ansにi+jの最大値を返している
     ans = max(ans, i + j)
 print(ans)

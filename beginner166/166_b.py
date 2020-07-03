@@ -1,4 +1,9 @@
 N, K = map(int,input().split())
-d = int(input()) #ここで標準入力
- = int(input()) #ここで標準入力
+A = []
+for _ in range(K):
+    d = input()
+    A += list(map(int, input().split()))
 
+
+#集合にして、重複を除き、数を引く
+print(N - len(set(A)))

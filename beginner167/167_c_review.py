@@ -12,14 +12,15 @@ N, M, X = map(int, input().split())
 C = []
 A = []
 for i in range(N):
-    t = list(map(int, input().splut()))
+    t = list(map(int, input().split()))
     C.append(t[0])
-    A.appned(t[1:]) # 1から最後まで
+    A.append(t[1:]) # 1から最後まで
 
 result = -1
 
 # << は 左への bit シフト。 シフトした分、１０進数で2^N分増える
-for i in range(2 ** N):
+#全検索
+for i in range(2 << N):
     # t 
     t = [0] * M 
     c = 0
@@ -30,4 +31,11 @@ for i in range(2 ** N):
             continue #以下処理を飛ばしてforに戻る
         # cに金額を足している
         c += C[j]
-        
+        for k in range(N):
+            t[k] += A[j][k]
+    if all(x >= X for x in t):
+        if result == -1:
+            result = c
+        else:
+            result = min(result, c)
+print(result)

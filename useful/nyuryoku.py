@@ -42,6 +42,8 @@ a = [input() for i in range(n)]
 a = [int(input()) for i in range(n)]
 
 
+#２次元配列 複数行複数列 
+a = [input().split() for l in range(n)]
 
 
 
